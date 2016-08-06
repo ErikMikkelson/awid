@@ -1,0 +1,33 @@
+{
+  "name": "awalkindublin",
+  "version": "0.0.4",
+  "description": "The Serverless GraphQL Application Boilerplate",
+  "author": {
+    "name": "me"
+  },
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/serverless/serverless-graphql.git"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.3.0",
+    "jsonwebtoken": "^5.7.0",
+    "lodash": "^4.6.1",
+    "bluebird": "^3.3.4",
+    "serverless-client-s3": "^2.0.0",
+    "serverless-cors-plugin": "^0.4.1",
+    "serverless-meta-sync": "^0.1.0",
+    "serverless-offline": "^2.2.4"
+  },
+  "bugs": {
+    "url": "https://github.com/serverless/serverless-graphql/issues"
+  },
+  "homepage": "https://github.com/serverless/serverless-graphql#readme",
+  "scripts": {},
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/serverless-graphql-0.0.4.tgz_1460768832694_0.5603838413953781"
+  }
+}
