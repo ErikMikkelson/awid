@@ -1,15 +1,15 @@
 {
   "name": "awalkindublin",
-  "version": "0.0.4",
-  "description": "The Serverless GraphQL Application Boilerplate",
+  "version": "0.0.1",
+  "description": "AWalkinDublin",
   "author": {
-    "name": "me"
+    "name": "erikmikkelson"
   },
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/serverless/serverless-graphql.git"
+    "url": "git://github.com/erikmikkelson/awid.git"
   },
   "dependencies": {
     "aws-sdk": "^2.3.0",
@@ -22,12 +22,8 @@
     "serverless-offline": "^2.2.4"
   },
   "bugs": {
-    "url": "https://github.com/serverless/serverless-graphql/issues"
+    "url": "https://github.com/erikm/awid/issues"
   },
-  "homepage": "https://github.com/serverless/serverless-graphql#readme",
+  "homepage": "https://github.com/erikmikkelson/awid#readme",
   "scripts": {},
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/serverless-graphql-0.0.4.tgz_1460768832694_0.5603838413953781"
-  }
 }

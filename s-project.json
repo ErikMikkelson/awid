@@ -1,12 +1,8 @@
 {
   "name": "awalkindublin",
   "custom": {
-    "meta": {
-      "name": "${meta_bucket}",
-      "region": "${meta_bucket_region}"
-    },
     "client": {
-      "bucketName": "boilerplate.${stage}.${region}"
+      "bucketName": "awidclient"
     },
     "cors": {
       "allowOrigin": "*",
@@ -19,7 +15,6 @@
     }
   },
   "plugins": [
-    "serverless-meta-sync",
     "serverless-cors-plugin",
     "serverless-client-s3",
     "serverless-offline",
