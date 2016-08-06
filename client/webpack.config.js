@@ -57,9 +57,12 @@ module.exports = {
         loaders: ['style', 'raw'],
         include: __dirname
       },
-      { test: /\.(jpe?g|png|gif|svg)$/,
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
         loader: 'url',
-        query: {limit: 10240}
+        query: {
+          limit: 10240
+        }
       }
     ]
   }
