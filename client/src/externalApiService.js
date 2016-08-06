@@ -1,5 +1,7 @@
+/* eslint-disable */
 import 'isomorphic-fetch';
 import { put } from 'redux-saga/effects';
+import books from './books/books.json';
 
 import { actions as authActions } from './auth';
 import { checkStatus, parseJSON } from './utils';
@@ -13,7 +15,7 @@ function getFetchInit(idToken, requestMethod, body) {
 
   const fetchInit = {
     method: requestMethod,
-    headers: requestHeaders
+    headers: requestHeaders,
   };
 
   if (body) {
@@ -36,11 +38,9 @@ export function fetchBooks(idToken) {
   //   .then(json => ({ books: json }))
   //   .catch(error => Promise.reject(error));
 
-  const books = require('./books/books.json');
-
   return new Promise((resolve) => {
     resolve({
-      books: books.sort((a, b) => a.title.localeCompare(b.title))
+      books: books.sort((a, b) => a.title.localeCompare(b.title)),
     });
   });
 }
@@ -52,7 +52,6 @@ export function* handleApiError(error, failureAction) {
     yield put(failureAction(error.message));
   } else {
     if (response.status === 401) {
-      // Unauthorised - show login
       yield put(authActions.loginRequest());
     } else {
       const responseError = {

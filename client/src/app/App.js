@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { Flex } from 'reflexbox';
 
 import { toggleDropdown } from './actions';
-import { getDropdownOpen } from './selectors';
+import Selectors from './selectors';
 
 import AppFooter from '../shared-components/AppFooter';
 import Navbar from '../shared-components/Navbar';
 import { actions as authActions, selectors as authSelectors } from '../auth';
 
-export default class App extends Component {
+class App extends Component {
   handleLogin = () => {
     this.props.dispatch(authActions.loginRequest());
   }
@@ -26,7 +26,12 @@ export default class App extends Component {
     const { children, dropdownOpen, profile } = this.props;
 
     return (
-      <Flex column style={{ height: '100%' }}>
+      <Flex
+        column
+        style={{
+          height: '100%',
+        }}
+      >
         <Navbar
           profile={profile}
           handleLogin={this.handleLogin}
@@ -34,10 +39,10 @@ export default class App extends Component {
           toggleDropdown={this.toggleDropdown}
           dropdownOpen={dropdownOpen}
         />
-        {children}
+        { children }
         <AppFooter />
       </Flex>
-    );
+      );
   }
 }
 
@@ -50,9 +55,10 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    dropdownOpen: getDropdownOpen(state),
+    dropdownOpen: Selectors.getDropdownOpen(state),
     profile: authSelectors.getProfile(state),
   };
-};
+}
+
 
 export default connect(mapStateToProps)(App);

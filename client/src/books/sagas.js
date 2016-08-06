@@ -20,8 +20,8 @@ export function* fetchBooksSaga(idToken) {
 }
 
 export function* watchBooksRequest() {
-  while (true) {
-    const { idToken } = yield take(BOOKS_REQUEST)
+  while (true) { // eslint-disable-line no-constant-condition
+    const { idToken } = yield take(BOOKS_REQUEST);
 
     yield call(fetchBooksSaga, idToken);
   }

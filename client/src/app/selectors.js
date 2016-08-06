@@ -1,1 +1,7 @@
-export const getDropdownOpen = (state) => state.app.dropdownOpen;
+function getDropdownOpen(state) {
+  return state.app.dropdownOpen;
+}
+
+export default {
+  getDropdownOpen,
+};
