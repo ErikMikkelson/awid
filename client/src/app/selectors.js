@@ -1,7 +1,7 @@
-function getDropDownOpen(state) {
-  return state.app.dropDownOpen;
+function getDropdownOpen(state) {
+  return state.app.dropdownOpen;
 }
 
 export default {
-  getDropDownOpen,
+  getDropdownOpen,
 };

@@ -46,12 +46,6 @@ const HomePage = () => (
       <Section pb={0}>
         <SectionHeader heading="Technologies Used" href="#tech" />
       </Section>
-      <Section pb={0}>
-        <Blockquote mt={3} source="Erik Mikkelson">
-          Never rattled. Never frantic. Always hustling and acting with creativity. Never anything
-          but deliberate. Never attempting to do the impossible - but everything up to that line.
-        </Blockquote>
-      </Section>
     </Container>
   </Flex>
 );

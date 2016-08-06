@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Flex } from 'reflexbox';
 
 import { toggleDropdown } from './actions';
-import { getDropdownOpen } from './selectors';
+import Selectors from './selectors';
 
 import AppFooter from '../shared-components/AppFooter';
 import Navbar from '../shared-components/Navbar';
@@ -55,7 +55,7 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    dropdownOpen: getDropdownOpen(state),
+    dropdownOpen: Selectors.getDropdownOpen(state),
     profile: authSelectors.getProfile(state),
   };
 }
