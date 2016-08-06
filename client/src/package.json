@@ -1,14 +1,13 @@
 {
-  "name": "serverless-app-client",
+  "name": "awalkindublin-app-client",
   "version": "0.1.0",
-  "description": "Serverless client app",
+  "description": "AWalkInDublin client app",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --hot --inline"
   },
   "keywords": [
-    "serverless",
-    "serverless boilerplate"
+    "awalkindublin"
   ],
   "author": "",
   "license": "MIT",

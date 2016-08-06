@@ -29,7 +29,10 @@ npm install
 npm start
 ```
 
-This will run the client locally. You can then deploy the client to an S3 bucket with:
+This will run the client locally.  You should be able to access it at http://localhost:8080
+
+
+ You can then deploy the client to an S3 bucket with:
 
 ```
 npm run build
