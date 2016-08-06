@@ -2,13 +2,18 @@
 
 const Promise = require('bluebird');
 const jwt = require('jsonwebtoken');
+const Config = require('../../config.js')
+
+const auth0 = Config.auth0;
 
 function authorize(token, requiredPermissions) {
 
   // make sure user is logged in
   try {
-    var user = jwt.verify(token, process.env.AUTH_TOKEN_SECRET);
-  } catch(e) {
+    var user = jwt.verify(tokenParts[1], auth0.public_key, {
+      algorithm: "RS256"
+    });
+  } catch (e) {
     return Promise.reject('Invalid Token');
   }
 
@@ -20,8 +25,6 @@ function authorize(token, requiredPermissions) {
   return Promise.resolve(user);
 }
 
-function authenticate(user) {
-  return jwt.sign(user, process.env.AUTH_TOKEN_SECRET);
-}
-
-module.exports = {authenticate, authorize};
+module.exports = {
+  authorize
+};
