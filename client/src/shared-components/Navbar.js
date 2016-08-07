@@ -12,7 +12,7 @@ const Navbar = ({ profile, handleLogin, handleLogout, toggleDropdown, dropdownOp
       {
   profile &&
     <NavItem is="object" color="midgray">
-      <Link to="/books" children="Books" />
+      <Link to="/tours" children="Tours" />
     </NavItem>
   }
       <Space auto />

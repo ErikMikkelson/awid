@@ -3,39 +3,39 @@
 const GraphQLString = require('graphql').GraphQLString;
 const GraphQLNonNull = require('graphql').GraphQLNonNull;
 
-const UserType = require('./type');
+const TourType = require('./type');
 const validate = require('./validate');
 const resolves = require('./resolves');
 
 module.exports = {
-  createUser: {
-    type: UserType,
-    description: 'Create User',
+  createTour: {
+    type: TourType,
+    description: 'Create Tour',
     args: {
-      username: { type: new GraphQLNonNull(GraphQLString) },
       name: { type: new GraphQLNonNull(GraphQLString) },
-      email: { type: new GraphQLNonNull(GraphQLString) }
+      location: { type: new GraphQLNonNull(GraphQLString) },
+      description: { type: new GraphQLNonNull(GraphQLString) }
     },
     resolve(source, args) {
       return validate(args).then(() => resolves.create(args));
     }
   },
-  updateUser: {
-    type: UserType,
-    description: 'Update User',
+  updateTour: {
+    type: TourType,
+    description: 'Update Tour',
     args: {
       name: { type: new GraphQLNonNull(GraphQLString) },
       email: { type: new GraphQLNonNull(GraphQLString) },
     },
     resolve(source, args) {
-      return validate(args).then((user) => resolves.update(user, args));
+      return validate(args).then((tour) => resolves.update(tour, args));
     }
   },
-  deleteUser: {
-    type: UserType,
-    description: 'Delete User',
+  deleteTour: {
+    type: TourType,
+    description: 'Delete Tour',
     resolve(source, args) {
-      return validate(args).then((user) => resolves.remove(user));
+      return validate(args).then((tour) => resolves.remove(tour));
     }
   }
 }

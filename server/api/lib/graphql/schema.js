@@ -8,7 +8,8 @@ const queries = {}, mutations = {};
 
 // add your collections here
 const collections = [
-  'users'
+  'users',
+  'tours'
 ];
 
 // load collections queries and muataions

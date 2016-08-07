@@ -27,7 +27,7 @@ export function* loginRequestSaga() {
     const { profile, token } = yield call(showLock);
 
     yield put(loginSuccess(profile, token));
-    yield put(push('/users'));
+    yield put(push('/tours'));
   } catch (error) {
     yield put(loginFailure(error));
     yield put(push('/'));

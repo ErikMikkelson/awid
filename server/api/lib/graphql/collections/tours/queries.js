@@ -9,21 +9,21 @@ const validate = require('./validate');
 const resolves = require('./resolves');
 
 module.exports = {
-  users: {
+  tours: {
     type: new GraphQLList(UserType),
-    description: 'List of users',
+    description: 'List of tours',
     resolve: function(source, args) {
       return resolves.getAll();
     }
   },
-  user: {
+  tour: {
     type: UserType,
-    description: 'Get a User by username',
+    description: 'Get a tour by name',
     args: {
-      username: {type: new GraphQLNonNull(GraphQLString)}
+      name: {type: new GraphQLNonNull(GraphQLString)}
     },
     resolve: function(source, args) {
-      return validate(args).then(() => resolves.get(args.username));
+      return validate(args).then(() => resolves.get(args.name));
     }
   }
 }

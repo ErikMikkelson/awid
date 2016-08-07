@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-apollo';
 import gql from 'graphql-tag';
-import { Box } from 'reflexbox';
-import { Container } from 'rebass';
-import { immutable } from 'immutable';
+import { Box, Flex } from 'reflexbox';
+import {
+  PageHeader,
+  Container,
+  Card,
+  Text,
+} from 'rebass';
 import autobind from 'autobind-decorator';
 
 import FullscreenLoader from '../shared-components/FullscreenLoader';
@@ -14,19 +18,20 @@ import FullscreenLoader from '../shared-components/FullscreenLoader';
       data: {
         query: gql`
             query {
-              users {
+              tours {
                 name
+                location
+                description
               }
             }
           `,
         forceFetch: false,
-        returnPartialData: true,
       },
     };
   },
 })
 @autobind
-export default class UsersPage extends Component {
+export default class ToursPage extends Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
   }
@@ -36,18 +41,29 @@ export default class UsersPage extends Component {
 
   render() {
     const { data } = this.props;
+    console.log(data);
 
     return (
-    data.isLoading ?
+    data.loading ?
       <FullscreenLoader /> :
       <Box
         style={{
           flex: '1 0 auto',
         }}
       >
-        <Container>
-          <Text>{JSON.stringify(data.users)}</Text>
-        </Container> />
+        <Container pt={4} pb={3}>
+          <PageHeader my={2} py={2} description="All the tours" heading="Tours" />
+          <Flex align="center" justify="center" wrap gutter={2}>
+          {
+            data.tours.map((t, index) =>
+              <Card key={index} m={2} style={{ width: '309px', height: '610px' }} >
+                <Text bold>{t.name} ({t.location})</Text>
+                <Text small children={t.description} />
+              </Card>
+            )
+          }
+          </Flex>
+        </Container>
       </Box>
     );
   }
