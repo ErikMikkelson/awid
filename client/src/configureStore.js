@@ -6,7 +6,6 @@ import recycleState from 'redux-recycle';
 
 import client from './apolloClient';
 import { reducer as appReducer } from './app';
-import { reducer as books } from './books';
 import { reducer as authReducer, actions as authActions } from './auth';
 import rootSaga from './rootSaga';
 
@@ -14,7 +13,6 @@ const reducer = combineReducers(
   {
     auth: authReducer,
     app: recycleState(appReducer, [authActions.LOGOUT], appReducer.initialState),
-    books: recycleState(books, [authActions.LOGOUT], books.initialState),
     routing: routerReducer,
     apollo: client.reducer(),
   }

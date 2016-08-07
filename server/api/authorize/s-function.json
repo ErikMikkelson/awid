@@ -1,0 +1,44 @@
+{
+  "name": "authorize",
+  "runtime": "nodejs4.3",
+  "description": "Auth function",
+  "customName": false,
+  "customRole": false,
+  "handler": "authorize/handler.handler",
+  "timeout": 6,
+  "memorySize": 1024,
+  "authorizer": {
+    "type": "TOKEN",
+    "identitySource": "method.request.header.Authorization",
+    "authorizerResultTtlInSeconds": "0",
+    "identityValidationExpression": "^Bearer ey[^.]*\\.ey[^.]*\\..*$"
+  },
+  "custom": {
+    "excludePatterns": [],
+    "runtime": {
+      "transforms": [
+        {
+          "name": "babelify",
+          "opts": {
+            "presets": [
+              "es2015"
+            ]
+          }
+        },
+        "bulkify"
+      ]
+    }
+  },
+  "endpoints": [],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}",
+    "LOCAL_DDB_ENDPOINT": "${localDynamoDbEndpoint}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

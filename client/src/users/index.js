@@ -3,10 +3,10 @@ import reducer from './reducer';
 import * as sagas from './sagas';
 import * as selectors from './selectors';
 
-import BooksPage from './BooksPage';
+import UsersPage from './UsersPage';
 
 const components = {
-  BooksPage,
+  UsersPage,
 };
 
 export { actions, components, reducer, sagas, selectors };

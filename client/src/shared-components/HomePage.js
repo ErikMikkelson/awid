@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex } from 'reflexbox';
-import { Heading, Banner, Container, Section, SectionHeader, Blockquote,
+import { Heading, Banner, Container, Section, SectionHeader,
 } from 'rebass';
 
 const HomePage = () => (

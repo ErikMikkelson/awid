@@ -10,7 +10,6 @@ module.exports = new GraphQLObjectType({
     id: {type: GraphQLString},
     username: {type: GraphQLString},
     name: {type: GraphQLString},
-    email: {type: GraphQLString},
-    token: {type: GraphQLString}
+    email: {type: GraphQLString}
   })
 });

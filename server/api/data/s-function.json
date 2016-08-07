@@ -1,7 +1,7 @@
 {
   "name": "data",
   "runtime": "nodejs4.3",
-  "description": "Serverless Lambda function for project: serverless-boilerplate",
+  "description": "Data function",
   "customName": false,
   "customRole": false,
   "handler": "data/handler.handler",
@@ -29,8 +29,8 @@
       "path": "data",
       "method": "POST",
       "type": "AWS",
-      "authorizationType": "none",
-      "authorizerFunction": false,
+      "authorizationType": "CUSTOM",
+      "authorizerFunction": "authorize",
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {

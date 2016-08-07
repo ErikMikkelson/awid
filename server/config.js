@@ -1,6 +1,6 @@
 const environment = process.env.NODE_ENV || "development";
 
-export default deepFreeze({
+module.exports = deepFreeze({
   auth0: {
     public_key: [
       "-----BEGIN PUBLIC KEY-----",

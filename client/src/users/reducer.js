@@ -6,11 +6,11 @@ import {
 
 export const initialState = {
   isFetching: false,
-  books: [],
+  users: [],
   error: null,
 };
 
-export default function books(state = initialState, action) {
+export default function users(state = initialState, action) {
   switch (action.type) {
     case BOOKS_REQUEST:
       return {
@@ -21,7 +21,7 @@ export default function books(state = initialState, action) {
       return {
         ...state,
         isFetching: false,
-        books: action.books,
+        users: action.books,
         error: null,
       };
     case BOOKS_FAILURE:
