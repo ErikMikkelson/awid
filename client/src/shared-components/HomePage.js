@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex } from 'reflexbox';
-import { Heading, Banner, Container, Section, SectionHeader,
+import { Container, Section, SectionHeader,
 } from 'rebass';
 
 const HomePage = () => (
@@ -16,7 +16,7 @@ const HomePage = () => (
       <Section
         pb={0}
       >
-        <SectionHeader heading="Please Login" href="#about" />
+        <SectionHeader heading="A Walk in Dublin: Please Login" href="#about" />
       </Section>
     </Container>
   </Flex>

@@ -26,17 +26,11 @@ sls endpoint deploy --all
 A Walk In Dublin client
 
 ## Tools Used
-* Based off [Starter Pack](https://sp.603.nu
-* [React](https://github.com/facebook/react)
-* [Redux](https://github.com/reactjs/redux) (ft. various middleware)
-* [Redux Saga](https://github.com/yelouafi/redux-saga)
-* [Auth0 Lock](https://github.com/auth0/lock)
-* [React Router](https://github.com/reactjs/react-router)
-* [Rebass](https://github.com/jxnblk/rebass)
-* [Reflexbox](https://github.com/jxnblk/reflexbox)
-* [Webpack](https://github.com/webpack/webpack)
-* [Node.js](https://github.com/nodejs/node)
-* Few more tings...
+* Based off [Starter Pack](https://sp.603.nu] and [Serverless-GraphQL](https://github.com/serverless/serverless-graphql)
+* Other technologies:
+- Auth0 using public key authentication so no danger of a secret getting released
+- [Apollo Client](http://docs.apollostack.com/apollo-client/) To make binding to the GraphQL data easier
+
 
 ## Running locally
 1. Clone this repository
@@ -74,7 +68,7 @@ npm run build
 sls client deploy
 ```
 
-### Testing With A Local DynamoDB Instance
+### Testing With A Local DynamoDB Instance (I think this works)
 - Install [Docker](https://www.docker.com/)
 - Run `docker-compose up` to install and run DynamoDB.
 - Add the `localDynamoDbEndpoint` variable with the value `http://<DOCKER-MACHINE-IP>:8000` to `_meta/variables/s-variables-common.json`. Example value:  `http://192.168.99.100:8000`.
