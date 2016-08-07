@@ -45,7 +45,7 @@
               "Action": [
                 "*"
               ],
-              "Resource": "arn:aws:dynamodb:${region}:*:table/${project}-users-${stage}"
+              "Resource": "arn:aws:dynamodb:${region}:*:table/${project}-tours-${stage}"
             },
             {
               "Effect": "Allow",
@@ -63,19 +63,19 @@
         ]
       }
     },
-    "DynamoDbUsersTable": {
+    "DynamoDbToursTable": {
       "Type": "AWS::DynamoDB::Table",
       "DeletionPolicy": "Retain",
       "Properties": {
         "AttributeDefinitions": [
           {
-            "AttributeName": "username",
+            "AttributeName": "name",
             "AttributeType": "S"
           }
         ],
         "KeySchema": [
           {
-            "AttributeName": "username",
+            "AttributeName": "name",
             "KeyType": "HASH"
           }
         ],
@@ -83,7 +83,7 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "${project}-users-${stage}"
+        "TableName": "${project}-tours-${stage}"
       }
     }
   },
